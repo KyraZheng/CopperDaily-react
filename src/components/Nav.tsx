@@ -1,36 +1,39 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import React from 'react';
 
 const NavWrapper = styled.nav`
   border-top: 1px solid #777;
-  line-height: 24px;
     >ul {
     display: flex;
       >li{
       width: 33.33333%;
       text-align: center;
-      padding: 16px;
-      }
-    }  
+      margin: 20px;
+        > a{
+            &.selected {
+            background:#edfa00 ;
+             }
+         }
+      }  
 `;
 
-const Nav =()=>{
-  return(
-  <NavWrapper>
-    <ul>
-      <li>
-        <Link to="/tags">标签</Link>
-      </li>
-      <li>
-        <Link to="/copper">记一笔</Link>
-      </li>
-      <li>
-        <Link to="/statistics">统计</Link>
-      </li>
-    </ul>
-  </NavWrapper>
-  )
-}
+const Nav = () => {
+  return (
+    <NavWrapper>
+      <ul>
+        <li>
+          <NavLink to="/tags" activeClassName="selected">标签</NavLink>
+        </li>
+        <li>
+          <NavLink to="/copper" activeClassName="selected">记一笔</NavLink>
+        </li>
+        <li>
+          <NavLink to="/statistics" activeClassName="selected">统计</NavLink>
+        </li>
+      </ul>
+    </NavWrapper>
+  );
+};
 
 export default Nav;
