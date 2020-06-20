@@ -4,33 +4,50 @@ import React from 'react';
 
 
 const TagsSection = styled.section`
-background: #f5f5f5;
-//border: 1px solid #777;
-//margin: 10px;
-//border-radius: 10px;
-padding: 12px 16px;
+  border: 1px solid #777;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 12px 16px;
 > ol {
-margin: 0 -12px;
+    margin: 0 -12px;
 > li {
-border: 1px solid #777;
-display: inline-block;
-border-radius: 18px;
-padding: 1px 14px;
-font-size: 16px;
-margin: 4px 8px;
+    border: 1px solid #777;
+    display: inline-block;
+    border-radius: 18px;
+    padding: 1px 14px;
+    font-size: 16px;
+    margin: 4px 8px;
 }
 }
 > button {
-background: none;
-border: none;
-padding: 2px 2px;
-border-bottom: 1px solid #777;
-color: #777;
-margin-top: 8px;
-}
+  background: none;
+  border: none;
+  padding: 2px 2px;
+  border-bottom: 1px solid #777;
+  color: #777;
+  margin-top: 8px;
+  }
 `;
 
-const NotesSection = styled.section``;
+const NotesSection = styled.section`
+  font-size: 14px;
+  padding: 10px 16px;
+  > label {
+    display: flex;
+    align-items: center;
+    > span { padding: 2px 2px;
+             border-bottom: 1px solid #777; color: #777;
+             margin-right: 16px; white-space: nowrap}
+    > input {
+      display: block;
+      width: 100%;
+      height: 48px;
+      background: none;
+      border: none;
+    }
+  }
+
+`;
 const CategorySection = styled.section``;
 const NumberPadSection = styled.section``;
 
@@ -50,7 +67,7 @@ function Copper() {
       <NotesSection>
         <label>
           <span>备注</span>
-          <input type="text"/>
+          <input type="text" placeholder={'点击添加备注'} />
         </label>
       </NotesSection>
       <CategorySection>

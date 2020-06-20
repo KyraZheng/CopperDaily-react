@@ -3,15 +3,17 @@ import {NavLink} from 'react-router-dom';
 import React from 'react';
 
 const NavWrapper = styled.nav`
-  border-top: 1px solid #777;
-    >ul {
-    display: flex;
+
+    >ul {   
+      border-top: 1px solid #777;
+      display: flex;
       >li{
       width: 33.33333%;
       text-align: center;
       margin: 20px;
-        > a{
+        > a{       
             &.selected {
+            
             background:#edfa00 ;
              }
          }
