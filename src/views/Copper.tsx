@@ -28,7 +28,6 @@ const TagsSection = styled.section`
   margin-top: 8px;
   }
 `;
-
 const NotesSection = styled.section`
   font-size: 14px;
   padding: 10px 16px;
@@ -52,22 +51,49 @@ const CategorySection = styled.section`
   >ul {
   display: flex;
   > li {
-    margin: 5px;
+    margin: 10px;
     border-radius: 8px;
-    padding: 12px 0;
+    padding: 16px 0;
     width: 50%;
     text-align: center;
     font-size: 18px;
     border: 1px solid #777;
     &.selected {
       background: #777;
-      color: #edfa00;
+      color: #e5e5e5;
       }
     }
   }
 
 `;
-const NumberPadSection = styled.section``;
+const NumberPadSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  > .output {
+    margin-top: 8px;
+    background: #f5f5f5;
+    font-size: 36px;
+    line-height: 64px;
+    text-align: right;
+    padding: 0 16px;
+  }
+  > .pad {
+    margin: 7px;
+    > button {
+      border: 3px solid #e5e5e5;
+      background: #777;
+      color: #e5e5e5;
+      border-radius: 15px;
+      float: left;
+      width: 25%;
+      height: 64px;
+      &.ok {
+      height: 192px;
+      float: right;
+      }
+    }
+  }
+`;
 
 
 function Copper() {
@@ -95,21 +121,21 @@ function Copper() {
         </ul>
       </CategorySection>
       <NumberPadSection>
-<div>100</div>
-        <div>
+<div className="output">100</div>
+        <div className="pad">
           <button>1</button>
           <button>2</button>
           <button>3</button>
-          <button>DEL</button>
+          <button >DEL</button>
           <button>4</button>
           <button>5</button>
           <button>6</button>
-          <button>OK</button>
+          <button className="ok">OK</button>
           <button>7</button>
           <button>8</button>
           <button>9</button>
-          <button>C</button>
           <button>0</button>
+          <button>C</button>
           <button>.</button>
         </div>
       </NumberPadSection>
