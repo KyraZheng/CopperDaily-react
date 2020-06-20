@@ -13,7 +13,6 @@ const NavWrapper = styled.nav`
       margin: 20px;
         > a{       
             &.selected {
-            
             background:#edfa00 ;
              }
          }
