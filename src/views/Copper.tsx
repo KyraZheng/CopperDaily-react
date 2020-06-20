@@ -4,7 +4,13 @@ import React from 'react';
 
 
 const TagsSection = styled.section`
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
   border: 1px solid #777;
+  background: #f5f5f5;
   margin: 10px;
   border-radius: 10px;
   padding: 12px 16px;
@@ -16,7 +22,7 @@ const TagsSection = styled.section`
     border-radius: 18px;
     padding: 1px 14px;
     font-size: 16px;
-    margin: 4px 8px;
+    margin: 3px 6px;
 }
 }
 > button {
@@ -25,12 +31,12 @@ const TagsSection = styled.section`
   padding: 2px 2px;
   border-bottom: 1px solid #777;
   color: #777;
-  margin-top: 8px;
+  margin-top: 4px;
   }
 `;
 const NotesSection = styled.section`
   font-size: 14px;
-  padding: 10px 16px;
+  padding: 0 16px;
   > label {
     display: flex;
     align-items: center;
@@ -51,16 +57,15 @@ const CategorySection = styled.section`
   >ul {
   display: flex;
   > li {
-    margin: 10px;
+    margin: 4px 10px;
     border-radius: 8px;
-    padding: 16px 0;
+    padding: 12px 0;
     width: 50%;
     text-align: center;
     font-size: 18px;
     border: 1px solid #777;
     &.selected {
-      background: #777;
-      color: #e5e5e5;
+      background:#edfa00;
       }
     }
   }
@@ -78,11 +83,11 @@ const NumberPadSection = styled.section`
     padding: 0 16px;
   }
   > .pad {
-    margin: 7px;
+    margin:7px;
     > button {
+    font-size: 1em;
       border: 3px solid #e5e5e5;
-      background: #777;
-      color: #e5e5e5;
+      background: #bababa;
       border-radius: 15px;
       float: left;
       width: 25%;
@@ -94,11 +99,15 @@ const NumberPadSection = styled.section`
     }
   }
 `;
+const MyLayout = styled(Layout)`
+  display: flex;
+  flex-direction: column;
+`
 
 
 function Copper() {
   return (
-    <Layout>
+    <MyLayout>
       <TagsSection>
         <ol>
           <li>衣</li>
@@ -139,7 +148,7 @@ function Copper() {
           <button>.</button>
         </div>
       </NumberPadSection>
-    </Layout>);
+    </MyLayout>);
 }
 
 export default Copper;
