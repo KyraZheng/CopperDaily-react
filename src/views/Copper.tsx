@@ -1,104 +1,11 @@
 import Layout from '../components/Layout';
 import styled from 'styled-components';
 import React from 'react';
+import {CategorySection} from './Copper/CategorySection';
+import {NotesSection} from './Copper/NotesSection';
+import {NumberPadSection} from './Copper/NumberPadSection';
+import {TagsSection} from './Copper/TagsSection';
 
-
-const TagsSection = styled.section`
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  align-items: flex-start;
-  border: 1px solid #777;
-  background: #f5f5f5;
-  margin: 10px;
-  border-radius: 10px;
-  padding: 12px 16px;
-> ol {
-    margin: 0 -12px;
-> li {
-    border: 1px solid #777;
-    display: inline-block;
-    border-radius: 18px;
-    padding: 1px 14px;
-    font-size: 16px;
-    margin: 3px 6px;
-}
-}
-> button {
-  background: none;
-  border: none;
-  padding: 2px 2px;
-  border-bottom: 1px solid #777;
-  color: #777;
-  margin-top: 4px;
-  }
-`;
-const NotesSection = styled.section`
-  font-size: 14px;
-  padding: 0 16px;
-  > label {
-    display: flex;
-    align-items: center;
-    > span { padding: 2px 2px;
-             border-bottom: 1px solid #777; color: #777;
-             margin-right: 16px; white-space: nowrap}
-    > input {
-      display: block;
-      width: 100%;
-      height: 48px;
-      background: none;
-      border: none;
-    }
-  }
-
-`;
-const CategorySection = styled.section`
-  >ul {
-  display: flex;
-  > li {
-    margin: 4px 10px;
-    border-radius: 8px;
-    padding: 12px 0;
-    width: 50%;
-    text-align: center;
-    font-size: 18px;
-    border: 1px solid #777;
-    &.selected {
-      background:#edfa00;
-      }
-    }
-  }
-
-`;
-const NumberPadSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  > .output {
-    margin-top: 8px;
-    background: #f5f5f5;
-    font-size: 36px;
-    line-height: 64px;
-    text-align: right;
-    padding: 0 16px;
-  }
-  > .pad {
-    margin:7px;
-    > button {
-    font-size: 1em;
-      border: 3px solid #e5e5e5;
-      background: #bababa;
-      border-radius: 15px;
-      float: left;
-      width: 25%;
-      height: 64px;
-      &.ok {
-      height: 192px;
-      float: right;
-      }
-    }
-  }
-`;
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
