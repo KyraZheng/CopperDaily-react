@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import React from 'react';
 
-const NotesSection = styled.section`
+const Wrapper = styled.section`
   font-size: 14px;
   padding: 0 16px;
   > label {
@@ -20,4 +21,14 @@ const NotesSection = styled.section`
 
 `;
 
-export {NotesSection}
+const NotesSection = () => {
+  return (
+    <Wrapper>
+      <label>
+        <span>备注</span>
+        <input type="text" placeholder={' 点击添加备注'}/>
+      </label>
+    </Wrapper>);
+};
+
+export {NotesSection};
