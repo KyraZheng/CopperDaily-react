@@ -12,10 +12,10 @@ const NumberPadSection = styled.section`
     padding: 0 16px;
   }
   > .pad {
-    margin:7px;
+  margin:6px;
     > button {
     font-size: 1em;
-      border: 3px solid #e5e5e5;
+      border: 5px solid #e5e5e5;
       background: #bababa;
       border-radius: 15px;
       float: left;
