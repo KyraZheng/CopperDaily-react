@@ -21,7 +21,7 @@ const Wrapper = styled.section`
 
 `;
 
-const NotesSection = () => {
+const NotesSection:React.FC = () => {
   return (
     <Wrapper>
       <label>

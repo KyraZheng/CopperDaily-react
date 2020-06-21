@@ -9,16 +9,16 @@ import {TagsSection} from './Copper/TagsSection';
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
-`
+`;
 
 
 function Copper() {
   return (
     <MyLayout>
-      <TagsSection />
-      <NotesSection />
-      <CategorySection />
-      <NumberPadSection />
+      <TagsSection/>
+      <NotesSection/>
+      <CategorySection/>
+      <NumberPadSection/>
     </MyLayout>);
 }
 

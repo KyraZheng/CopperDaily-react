@@ -20,7 +20,7 @@ const Wrapper = styled.section`
 
 `;
 
-const CategorySection = () => {
+const CategorySection:React.FC = () => {
   return (
     <Wrapper>
       <ul>
