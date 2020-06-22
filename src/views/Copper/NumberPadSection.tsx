@@ -30,7 +30,15 @@ const Wrapper = styled.section`
   }
 `;
 const NumberPadSection: React.FC = () => {
-  const [output, setOutput] = useState('0');
+  const [output, _setOutput] = useState('0');
+  const setOutput = (output: string) =>{
+    if(output.length >16){
+      output = output.slice(0,16)
+    } else if (output.length === 0){
+      output = '0'
+    }
+    _setOutput(output)
+  }
   const onClickButtonWrapper = (e: React.MouseEvent) => {
     const text = (e.target as HTMLButtonElement).textContent;
     if (text === null) {return;}
@@ -45,19 +53,25 @@ const NumberPadSection: React.FC = () => {
       case '7':
       case '8':
       case '9':
-      case '.':
-        console.log('点');
-        if(output === '0'){
+        if (output === '0') {
           setOutput(text);
         } else {
-          setOutput(output+ text)
+          setOutput(output + text);
         }
         break;
-      case '删除':
-        console.log('删除');
+      case '.':
+        if (output.indexOf('.') >= 0) {return;}
+        setOutput(output + '.');
         break;
-      case '清空':
-        console.log('清空');
+      case 'DEL':
+        if (output.length === 1) {
+          setOutput('0');
+        } else {
+          setOutput(output.slice(0, -1));
+        }
+        break;
+      case 'C':
+        setOutput('0');
         break;
       case 'OK':
         console.log('确认');
@@ -79,8 +93,8 @@ const NumberPadSection: React.FC = () => {
         <button>7</button>
         <button>8</button>
         <button>9</button>
-        <button>0</button>
         <button>C</button>
+        <button>0</button>
         <button>.</button>
       </div>
     </Wrapper>
