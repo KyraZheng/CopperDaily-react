@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, {useRef} from 'react';
 
 const Wrapper = styled.section`
   font-size: 14px;
@@ -21,12 +21,28 @@ const Wrapper = styled.section`
 
 `;
 
-const NotesSection:React.FC = () => {
+type Props = {
+  value: string
+  onChange: (value: string) => void;
+}
+
+const NotesSection: React.FC<Props> = (props) => {
+  const note = props.value;
+  const refInput = useRef<HTMLInputElement>(null);
+  const onBlur = () => {
+    if (refInput.current !== null) {
+      props.onChange(refInput.current.value);
+    }
+  };
   return (
     <Wrapper>
       <label>
         <span>备注</span>
-        <input type="text" placeholder={' 点击添加备注'}/>
+        <input type="text" placeholder={' 点击添加备注'}
+               ref={refInput}
+               defaultValue={note}
+               onBlur={onBlur}
+        />
       </label>
     </Wrapper>);
 };

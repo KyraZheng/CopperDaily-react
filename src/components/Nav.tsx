@@ -12,7 +12,7 @@ const NavWrapper = styled.nav`
       text-align: center;
       margin: 20px;
         > a{       
-            &.selected {
+            &.value {
             background:#edfa00 ;
              }
          }
@@ -24,13 +24,13 @@ const Nav = () => {
     <NavWrapper>
       <ul>
         <li>
-          <NavLink to="/tags" activeClassName="selected">标签</NavLink>
+          <NavLink to="/tags" activeClassName="value">标签</NavLink>
         </li>
         <li>
-          <NavLink to="/copper" activeClassName="selected">记一笔</NavLink>
+          <NavLink to="/copper" activeClassName="value">记一笔</NavLink>
         </li>
         <li>
-          <NavLink to="/statistics" activeClassName="selected">统计</NavLink>
+          <NavLink to="/statistics" activeClassName="value">统计</NavLink>
         </li>
       </ul>
     </NavWrapper>
