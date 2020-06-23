@@ -26,7 +26,7 @@ type Props = {
   onChange: (value: string) => void;
 }
 
-const NotesSection: React.FC<Props> = (props) => {
+const NoteSection: React.FC<Props> = (props) => {
   const note = props.value;
   const refInput = useRef<HTMLInputElement>(null);
   const onBlur = () => {
@@ -47,4 +47,4 @@ const NotesSection: React.FC<Props> = (props) => {
     </Wrapper>);
 };
 
-export {NotesSection};
+export {NoteSection};

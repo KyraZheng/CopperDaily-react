@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import styled from 'styled-components';
 import React, {useState} from 'react';
 import {CategorySection} from './Copper/CategorySection';
-import {NotesSection} from './Copper/NotesSection';
+import {NoteSection} from './Copper/NoteSection';
 import {NumberPadSection} from './Copper/NumberPadSection';
 import {TagsSection} from './Copper/TagsSection';
 
@@ -11,40 +11,24 @@ type Category = '-' | '+'
 
 function Copper() {
   const [selected, setSelected] = useState({
-      tags: [] as string[],
-      note: '',
-      category: '-' as Category,
-      amount: 0
-    }
-  );
-
+    tags: [] as string[],
+    note: '',
+    category: '-' as Category,
+    amount: 0
+  });
+  const onChange = (obj: Partial<typeof selected>) => {
+    setSelected({...selected, ...obj});
+  };
   return (
     <MyLayout>
-      <TagsSection value={selected.tags} onChange={(tags) => setSelected(
-        {
-          ...selected, tags: tags
-        }
-      )}/>
-      <NotesSection value={selected.note}
-                    onChange={(note) => {
-                      setSelected({
-                        ...selected, note: note
-                      });
-                    }}
-      />
+      <TagsSection value={selected.tags}
+                   onChange={tags => onChange({tags})}/>
+      <NoteSection value={selected.note}
+                   onChange={note => onChange({note})}/>
       <CategorySection value={selected.category}
-                       onChange={(category) => {
-                         setSelected({
-                           ...selected, category: category
-                         });
-                       }}
-      />
+                       onChange={category => onChange({category})}/>
       <NumberPadSection value={selected.amount}
-                        onChange={(amount) => {
-                          setSelected({
-                            ...selected, amount: amount
-                          });
-                        }}
+                        onChange={amount => onChange({amount})}
                         onOk={() => {}}
       />
     </MyLayout>);
