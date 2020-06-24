@@ -9,6 +9,7 @@ import Tags from './views/Tags';
 import Copper from './views/Copper';
 import Statistics from './views/Statistics';
 import NoMatch from './views/NoMatch';
+import {Tag} from './views/Tag';
 
 
 
@@ -17,13 +18,16 @@ function App() {
     <Router>
 
         <Switch>
-          <Route path="/tags">
+          <Route path="/tags/:tag" exact>
+            <Tag />
+          </Route>
+          <Route path="/tags" exact>
             <Tags/>
           </Route>
-          <Route path="/copper">
+          <Route path="/copper" exact>
             <Copper/>
           </Route>
-          <Route path="/statistics">
+          <Route path="/statistics" exact>
             <Statistics/>
           </Route>
           <Redirect exact from='/' to='/copper'/>
