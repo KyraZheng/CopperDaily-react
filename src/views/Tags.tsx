@@ -3,6 +3,7 @@ import React from 'react';
 import {useTags} from 'useTags';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {Button} from '../components/Button';
 
 const TagList = styled.ol`
   font-size: 16px;
@@ -27,15 +28,6 @@ const TagList = styled.ol`
   }
 `;
 
-const Button = styled.button`
-  margin-top: 16px;
-  font-size: 16px;
-  border: none;
-  background: #bababa;
-  padding: 8px 12px;
-  border-radius: 12px;
-
-`;
 
 const Center = styled.div`
   display: flex;
