@@ -1,6 +1,6 @@
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {createId} from 'lib/createId';
-import {useUpdate} from 'useUpdate';
+import {useUpdate} from 'hooks/useUpdate';
 
 const useTags = () => {
   const [tags, setTags] = useState<{ id: number; name: string }[]>([]);
@@ -30,8 +30,8 @@ const useTags = () => {
     }
     return result;
   };
-  const updateTag = (id: number, obj: { name: string }) => {
-    setTags(tags.map(tag => tag.id === id ? {id, name: obj.name} : tag));
+  const updateTag = (id: number, {name}: { name: string }) => {
+    setTags(tags.map(tag => tag.id === id ? {id, name: name} : tag));
   };
   const deleteTag = (id: number) => {
     setTags(tags.filter(tag => tag.id !== id));
