@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {CategorySection} from './Copper/CategorySection';
 import {NoteSection} from './Copper/NoteSection';
 import {NumberPadSection} from './Copper/NumberPadSection';
@@ -25,13 +25,19 @@ function Copper() {
   };
 
   const submit = () => {
-    addRecord(selected);
-    alert('提交成功');
-    setSelected(defaultFormData);
+    if (addRecord(selected)) {
+      alert('提交成功');
+      setSelected(defaultFormData);
+    }
   };
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('时间到');
+      setSelected({...selected, amount: 1000});
+    }, 3000);
+  }, []);
   return (
     <MyLayout>
-      {JSON.stringify(selected)}
       <TagsSection value={selected.tagIds}
                    onChange={tagIds => onChange({tagIds})}/>
       <NoteSection value={selected.note}
