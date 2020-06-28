@@ -30,12 +30,7 @@ function Copper() {
       setSelected(defaultFormData);
     }
   };
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('时间到');
-      setSelected({...selected, amount: 1000});
-    }, 3000);
-  }, []);
+
   return (
     <MyLayout>
       <TagsSection value={selected.tagIds}
