@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import {CategorySection} from './Copper/CategorySection';
 import {NoteSection} from './Copper/NoteSection';
 import {NumberPadSection} from './Copper/NumberPadSection';
@@ -19,7 +19,7 @@ const defaultFormData = {
 function Copper() {
   const [selected, setSelected] = useState(defaultFormData
   );
-  const {records, addRecord} = useRecords();
+  const {addRecord} = useRecords();
   const onChange = (obj: Partial<typeof selected>) => {
     setSelected({...selected, ...obj});
   };
