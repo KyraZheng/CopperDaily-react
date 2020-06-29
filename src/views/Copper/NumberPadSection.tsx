@@ -22,7 +22,7 @@ const Wrapper = styled.section`
       float: left;
       width: 25%;
       height: 64px;
-      &.ok {
+      &.OK {
       height: 192px;
       float: right;
       }
@@ -101,7 +101,7 @@ const NumberPadSection: React.FC <Props>= (props) => {
         <button>4</button>
         <button>5</button>
         <button>6</button>
-        <button className="ok">OK</button>
+        <button className="OK">OK</button>
         <button>7</button>
         <button>8</button>
         <button>9</button>

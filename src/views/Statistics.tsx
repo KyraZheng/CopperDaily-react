@@ -27,7 +27,7 @@ const Item = styled.div`
     color: #999;
     font-size: 14px;
 }
-`
+`;
 const Header = styled.h4`
   font-size: 18px;
   line-height: 20px;
@@ -38,7 +38,7 @@ const Header = styled.h4`
 function Statistics() {
   const [category, setCategory] = useState<'-' | '+'>('-');
   const {records} = useRecords();
-  const {getName} = useTags()
+  const {getName} = useTags();
   const hash: { [K: string]: RecordItem[] } = {}; // {'2020-05-11': [item, item], '2020-05-10': [item, item], '2020-05-12': [item, item, item, item]}
   const selectedRecords = records.filter(r => r.category === category);
 
@@ -59,7 +59,8 @@ function Statistics() {
   return (
     <Layout>
       <CategoryWrapper>
-        <CategorySection value={category} onChange={value => setCategory(value)}/>
+        <CategorySection value={category}
+                         onChange={value => setCategory(value)}/>
       </CategoryWrapper>
       {array.map(([date, records]) => <div>
         <Header>
@@ -85,7 +86,8 @@ function Statistics() {
           })}
         </div>
       </div>)}
-    </Layout>);
+    </Layout>
+  );
 }
 
 export default Statistics;

@@ -16,6 +16,11 @@ const defaultFormData = {
   amount: 0
 };
 
+const MyLayout = styled(Layout)`
+  display: flex;
+  flex-direction: column;
+`;
+
 function Copper() {
   const [selected, setSelected] = useState(defaultFormData
   );
@@ -27,7 +32,7 @@ function Copper() {
   const submit = () => {
     if (addRecord(selected)) {
       alert('提交成功');
-      setSelected(defaultFormData);
+      window.location.reload();
     }
   };
 
@@ -46,9 +51,5 @@ function Copper() {
     </MyLayout>);
 }
 
-const MyLayout = styled(Layout)`
-  display: flex;
-  flex-direction: column;
-`;
 
 export default Copper;

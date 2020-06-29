@@ -16,7 +16,6 @@ import {Tag} from './views/Tag';
 function App() {
   return (
     <Router>
-
         <Switch>
           <Route path="/tags/:id" exact>
             <Tag />
