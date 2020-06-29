@@ -26,7 +26,9 @@ const Tag: React.FC = () => {
       </InputWrapper>
 
       <Center>
-        <Button onClick={() => deleteTag(tag.id)}>
+        <Button onClick={() => {
+          deleteTag(tag.id) ;onClickBack()
+        }}>
           删除标签
         </Button>
       </Center>
